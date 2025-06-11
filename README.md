@@ -1,6 +1,6 @@
 # potentia
 
-The workout app thing
+The workout app
 
 ## Getting Started
 
