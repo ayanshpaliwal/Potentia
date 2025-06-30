@@ -1,6 +1,6 @@
 # potentia
 
-The workout app thing
+The workout app. These are mine pages(20,21,24,28, and 22).
 
 ## Getting Started
 
