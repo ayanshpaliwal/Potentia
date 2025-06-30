@@ -1,14 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:potentia/screens/Safety.dart';
 import 'package:potentia/screens/achievements_page.dart';
 import 'package:potentia/screens/calorie_tracker_screen.dart';
 import 'package:potentia/screens/MealCard.dart';
 import 'package:potentia/screens/Metrics_page.dart';
 import 'package:potentia/screens/muscle_gain_page.dart';
+import 'package:potentia/screens/dashboard.dart';
+import 'package:potentia/screens/Diet_page.dart';
+import 'package:potentia/screens/Meal_plan.dart';
+import 'package:potentia/screens/Day_meal_plan.dart';
+import 'package:potentia/screens/Suppliments_page.dart';
+import 'package:potentia/screens/login_page.dart';
+import 'package:potentia/screens/workout_routins.dart';
+import 'package:potentia/screens/featured_page.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: YourSafetyApp(),
+    home: FeaturedPage(),
   ));
 }
 
@@ -28,7 +37,6 @@ class MyApp extends StatelessWidget {
           bodyMedium: TextStyle(color: Colors.white),
         ),
       ),
-      home: CalorieTrackerScreen(),
     );
   }
 }
