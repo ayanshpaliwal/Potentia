@@ -14,10 +14,12 @@ import 'package:potentia/screens/Suppliments_page.dart';
 import 'package:potentia/screens/workout_routins.dart';
 import 'package:potentia/screens/featured_page.dart';
 import 'package:potentia/screens/rest_days.dart';
+import 'package:potentia/screens/login_page.dart';
+import 'package:potentia/screens/create_account_page.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: RestDaysPage(),
+    home: LoginPage(),
   ));
 }
 
