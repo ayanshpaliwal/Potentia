@@ -530,19 +530,6 @@ class FeaturedPage extends StatelessWidget {
                   ),
                 ],
               ),
-
-              const SizedBox(height: 40),
-
-              // Page number
-              const Center(
-                child: Text(
-                  '29',
-                  style: TextStyle(
-                    color: Colors.white54,
-                    fontSize: 16,
-                  ),
-                ),
-              ),
             ],
           ),
         ),

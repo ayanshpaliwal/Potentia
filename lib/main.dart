@@ -11,13 +11,13 @@ import 'package:potentia/screens/Diet_page.dart';
 import 'package:potentia/screens/Meal_plan.dart';
 import 'package:potentia/screens/Day_meal_plan.dart';
 import 'package:potentia/screens/Suppliments_page.dart';
-import 'package:potentia/screens/login_page.dart';
 import 'package:potentia/screens/workout_routins.dart';
 import 'package:potentia/screens/featured_page.dart';
+import 'package:potentia/screens/rest_days.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: FeaturedPage(),
+    home: RestDaysPage(),
   ));
 }
 
