@@ -1,28 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:potentia/screens/Safety.dart';
-import 'package:potentia/screens/achievements_page.dart';
-import 'package:potentia/screens/calorie_tracker_screen.dart';
-import 'package:potentia/screens/MealCard.dart';
-import 'package:potentia/screens/Metrics_page.dart';
-import 'package:potentia/screens/muscle_gain_page.dart';
-import 'package:potentia/screens/dashboard.dart';
-import 'package:potentia/screens/Diet_page.dart';
-import 'package:potentia/screens/Meal_plan.dart';
-import 'package:potentia/screens/Day_meal_plan.dart';
-import 'package:potentia/screens/Suppliments_page.dart';
-import 'package:potentia/screens/workout_routins.dart';
-import 'package:potentia/screens/featured_page.dart';
-import 'package:potentia/screens/rest_days.dart';
 import 'package:potentia/screens/login_page.dart';
 import 'package:potentia/screens/create_account_page.dart';
+import 'package:potentia/screens/home_page.dart';
 
 void main() {
-  runApp(MaterialApp(
-    home: LoginPage(),
-  ));
+  runApp(const MyApp());
 }
-
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -34,11 +17,17 @@ class MyApp extends StatelessWidget {
       title: 'Potentia',
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Colors.black,
-        textTheme: TextTheme(
+        textTheme: const TextTheme(
           bodyLarge: TextStyle(color: Colors.white),
           bodyMedium: TextStyle(color: Colors.white),
         ),
       ),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => const LoginPage(),
+        '/create_account': (context) => const CreateAccountPage(),
+        '/home': (context) => const HomePage(),
+      },
     );
   }
 }

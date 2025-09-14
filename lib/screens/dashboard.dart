@@ -1,18 +1,6 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(const DashboardApp());
 
-class DashboardApp extends StatelessWidget {
-  const DashboardApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: DashboardScreen(),
-    );
-  }
-}
 
 class DashboardScreen extends StatelessWidget {
   DashboardScreen({super.key});
@@ -25,41 +13,14 @@ class DashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      drawer: Drawer(
-        backgroundColor: backgroundColor,
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 50),
-              const Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Text(
-                  "MENU",
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
-              ),
-              const Divider(color: Colors.white),
-              _buildDrawerItem(Icons.home, "Home"),
-              _buildDrawerItem(Icons.settings, "Settings"),
-              _buildDrawerItem(Icons.person, "Personal"),
-              _buildDrawerItem(Icons.access_time, "Your activity"),
-            ],
-          ),
-        ),
-      ),
+      
       appBar: AppBar(
         backgroundColor: backgroundColor,
         title: const Text(
           "Dashboard",
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
-        leading: Builder(
-          builder: (context) => IconButton(
-            icon: const Icon(Icons.menu, color: Colors.white),
-            onPressed: () => Scaffold.of(context).openDrawer(),
-          ),
-        ),
+        
         actions: const [
           Padding(
             padding: EdgeInsets.only(right: 12.0),
@@ -137,16 +98,7 @@ class DashboardScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildDrawerItem(IconData icon, String title) {
-    return ListTile(
-      leading: Icon(icon, color: Colors.white),
-      title: Text(
-        title,
-        style: const TextStyle(color: Colors.white),
-      ),
-      onTap: () {},
-    );
-  }
+  
 
   Widget _buildStepsCard() {
     return Container(

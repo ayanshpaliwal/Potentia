@@ -12,9 +12,8 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
   final TextEditingController _passwordController = TextEditingController();
 
   void _handleCreateAccount() {
-    print('Create Account button pressed');
-    print('Email: ${_emailController.text}');
-    print('Password: ${_passwordController.text}');
+    // You can add your account creation logic here
+    Navigator.pushReplacementNamed(context, '/home');
   }
 
   void _handleGoogleSignUp() {
@@ -26,8 +25,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
   }
 
   void _handleLoginNavigation() {
-    print('Log in button pressed');
-    // Navigate to login page
+    Navigator.pop(context);
   }
 
   @override

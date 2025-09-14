@@ -12,9 +12,8 @@ class _LoginPageState extends State<LoginPage> {
   final TextEditingController _passwordController = TextEditingController();
 
   void _handleLogin() {
-    print('Login button pressed');
-    print('Email: ${_emailController.text}');
-    print('Password: ${_passwordController.text}');
+    // You can add your authentication logic here
+    Navigator.pushReplacementNamed(context, '/home');
   }
 
   void _handleGoogleSignIn() {
@@ -26,8 +25,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _handleCreateAccountNavigation() {
-    print('Create Account button pressed');
-    // Navigate to create account page
+    Navigator.pushNamed(context, '/create_account');
   }
 
   void _handleForgotPassword() {
