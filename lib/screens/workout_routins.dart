@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:potentia/widgets/app_drawer.dart';
+import 'package:potentia/widgets/app_bar.dart';
+import 'package:potentia/services/navigation_service.dart';
 
 class WorkoutRoutinesPage extends StatefulWidget {
   @override
@@ -21,23 +24,11 @@ class _WorkoutRoutinesPageState extends State<WorkoutRoutinesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF2D2D2D),
-      appBar: AppBar(
-        backgroundColor: Color(0xFF2D2D2D),
-        elevation: 0,
-        leading: Icon(Icons.menu, color: Colors.white),
-        title: Text(
-          'Workout\nRoutines',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        actions: [
-          Icon(Icons.settings, color: Colors.white),
-          SizedBox(width: 16),
-        ],
+      backgroundColor: const Color(0xFF2D2D2D),
+      drawer: const AppDrawer(),
+      appBar: const CustomAppBar(
+        title: "Workout Routines",
+        showDrawer: true,
       ),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16),

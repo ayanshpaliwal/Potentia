@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:potentia/widgets/app_drawer.dart';
+import 'package:potentia/widgets/app_bar.dart';
+import 'package:potentia/services/navigation_service.dart';
 
 class AchievementsPage extends StatelessWidget {
   const AchievementsPage({super.key});
@@ -7,14 +10,10 @@ class AchievementsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black87,
-      appBar: AppBar(
-        backgroundColor: Colors.black87,
-        elevation: 0,
-        centerTitle: true,
-        title: const Text(
-          'Achievements 🏆',
-          style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold, color: Colors.white),
-        ),
+      drawer: const AppDrawer(),
+      appBar: const CustomAppBar(
+        title: "Achievements 🏆",
+        showDrawer: true,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),

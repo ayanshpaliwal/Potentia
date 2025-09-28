@@ -4,6 +4,7 @@ import 'package:potentia/screens/dashboard.dart';
 import 'package:potentia/screens/workout_routins.dart';
 import 'package:potentia/screens/Diet_page.dart';
 import 'package:potentia/screens/achievements_page.dart';
+import 'package:potentia/services/navigation_service.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -52,8 +53,10 @@ class _HomePageState extends State<HomePage> {
           ),
         ],
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        unselectedItemColor: Colors.grey,
+        selectedItemColor: const Color(0xFFED5E0D),
+        unselectedItemColor: Colors.white54,
+        backgroundColor: const Color(0xFF232323),
+        type: BottomNavigationBarType.fixed,
         onTap: _onItemTapped,
       ),
     );

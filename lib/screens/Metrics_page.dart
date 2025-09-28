@@ -1,4 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:potentia/widgets/app_drawer.dart';
+import 'package:potentia/widgets/app_bar.dart';
+import 'package:potentia/services/navigation_service.dart';
+
+class MetricsPage extends StatelessWidget {
+  const MetricsPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const ProgressTrackerPage();
+  }
+}
 
 class ProgressTrackerPage extends StatelessWidget {
   const ProgressTrackerPage({super.key});
@@ -6,19 +18,11 @@ class ProgressTrackerPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF2E2E2E), // Dark background
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        title: const Text(
-          'Progress Tracker',
-          style: TextStyle(
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
-            color: Colors.white,
-          ),
-        ),
-        centerTitle: true,
+      backgroundColor: const Color(0xFF2E2E2E),
+      drawer: const AppDrawer(),
+      appBar: const CustomAppBar(
+        title: "Progress Tracker",
+        showDrawer: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),

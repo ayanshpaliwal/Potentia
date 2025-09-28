@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:potentia/services/navigation_service.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class _LoginPageState extends State<LoginPage> {
 
   void _handleLogin() {
     // You can add your authentication logic here
-    Navigator.pushReplacementNamed(context, '/home');
+    NavigationService.navigateAndRemoveUntil(AppRoutes.home);
   }
 
   void _handleGoogleSignIn() {
@@ -25,7 +26,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   void _handleCreateAccountNavigation() {
-    Navigator.pushNamed(context, '/create_account');
+    NavigationService.navigateTo(AppRoutes.createAccount);
   }
 
   void _handleForgotPassword() {

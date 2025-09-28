@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:potentia/widgets/app_drawer.dart';
+import 'package:potentia/widgets/app_bar.dart';
+import 'package:potentia/services/navigation_service.dart';
 
 class WeeklyMealPlanScreen extends StatelessWidget {
   WeeklyMealPlanScreen({super.key});
@@ -18,50 +21,10 @@ class WeeklyMealPlanScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      drawer: Drawer(
-        backgroundColor: backgroundColor,
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 50),
-              const Padding(
-                padding: EdgeInsets.all(16.0),
-                child: Text(
-                  "MENU",
-                  style: TextStyle(color: Colors.white, fontSize: 20),
-                ),
-              ),
-              const Divider(color: Colors.white),
-              _buildDrawerItem(Icons.home, "Home"),
-              _buildDrawerItem(Icons.settings, "Settings"),
-              _buildDrawerItem(Icons.person, "Personal"),
-              _buildDrawerItem(Icons.access_time, "Your activity"),
-            ],
-          ),
-        ),
-      ),
-      appBar: AppBar(
-        backgroundColor: backgroundColor,
-        title: const Text(
-          "Weekly meal plan",
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 24),
-        ),
-        leading: Builder(
-          builder: (context) => IconButton(
-            icon: const Icon(Icons.menu, color: Colors.white),
-            onPressed: () => Scaffold.of(context).openDrawer(),
-          ),
-        ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 12.0),
-            child: CircleAvatar(
-              backgroundColor: Colors.grey,
-              radius: 18,
-            ),
-          ),
-        ],
+      drawer: const AppDrawer(),
+      appBar: const CustomAppBar(
+        title: "Weekly meal plan",
+        showDrawer: true,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -85,22 +48,11 @@ class WeeklyMealPlanScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildDrawerItem(IconData icon, String title) {
-    return ListTile(
-      leading: Icon(icon, color: Colors.white),
-      title: Text(
-        title,
-        style: const TextStyle(color: Colors.white),
-      ),
-      onTap: () {},
-    );
-  }
 
   Widget _buildDayCard(String day) {
     return GestureDetector(
       onTap: () {
-        // Navigate to specific day meal plan
-        print("Tapped on $day");
+        NavigationService.safeNavigateTo(AppRoutes.dayMealPlan, featureName: "$day Meal Plan");
       },
       child: Container(
         width: double.infinity,

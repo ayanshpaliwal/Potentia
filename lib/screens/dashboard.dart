@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-
-
+import 'package:potentia/widgets/app_drawer.dart';
+import 'package:potentia/widgets/app_bar.dart';
+import 'package:potentia/services/navigation_service.dart';
 
 class DashboardScreen extends StatelessWidget {
   DashboardScreen({super.key});
@@ -13,23 +14,10 @@ class DashboardScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      
-      appBar: AppBar(
-        backgroundColor: backgroundColor,
-        title: const Text(
-          "Dashboard",
-          style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
-        ),
-        
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 12.0),
-            child: CircleAvatar(
-              backgroundImage: AssetImage('assets/avatar.jpg'),
-              radius: 18,
-            ),
-          ),
-        ],
+      drawer: const AppDrawer(),
+      appBar: const CustomAppBar(
+        title: "Dashboard",
+        showDrawer: true,
       ),
       body: ListView(
         padding: const EdgeInsets.all(16.0),
