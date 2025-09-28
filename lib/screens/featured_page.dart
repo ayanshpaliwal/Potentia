@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:potentia/widgets/app_drawer.dart';
+import 'package:potentia/widgets/app_bar.dart';
+import 'package:potentia/services/navigation_service.dart';
 
 class FeaturedPage extends StatelessWidget {
   const FeaturedPage({Key? key}) : super(key: key);
@@ -16,6 +19,11 @@ class FeaturedPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFF2D2D2D),
+      drawer: const AppDrawer(),
+      appBar: const CustomAppBar(
+        title: "Featured",
+        showDrawer: true,
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           padding: const EdgeInsets.all(20.0),

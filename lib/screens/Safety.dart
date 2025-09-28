@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:potentia/widgets/app_drawer.dart';
+import 'package:potentia/widgets/app_bar.dart';
+import 'package:potentia/services/navigation_service.dart';
 
-class YourSafetyApp extends StatelessWidget {
-  const YourSafetyApp({super.key});
+class SafetyPage extends StatelessWidget {
+  const SafetyPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Your Safety',
-      debugShowCheckedModeBanner: false,
-      home: YourSafetyPage(),
-    );
+    return YourSafetyPage();
   }
 }
 
@@ -23,7 +22,11 @@ class YourSafetyPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      drawer: const Drawer(),
+      drawer: const AppDrawer(),
+      appBar: const CustomAppBar(
+        title: "Your Safety",
+        showDrawer: true,
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16),

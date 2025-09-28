@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:potentia/widgets/app_bar.dart';
+import 'package:potentia/services/navigation_service.dart';
 
 class MuscleGainPage extends StatelessWidget {
   const MuscleGainPage({super.key});
@@ -6,14 +8,9 @@ class MuscleGainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF232323),
-      appBar: AppBar(
-        title: Text(
-          'Muscle gain',
-          style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.white),
-        ),
-        backgroundColor: Colors.black,
-        iconTheme: IconThemeData(color: Colors.white),
+      backgroundColor: const Color(0xFF232323),
+      appBar: const SimpleAppBar(
+        title: "Muscle Gain Supplements",
       ),
       body: SingleChildScrollView(
         child: Column(

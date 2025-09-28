@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:potentia/services/navigation_service.dart';
 
 class CreateAccountPage extends StatefulWidget {
   const CreateAccountPage({Key? key}) : super(key: key);
@@ -13,7 +14,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
 
   void _handleCreateAccount() {
     // You can add your account creation logic here
-    Navigator.pushReplacementNamed(context, '/home');
+    NavigationService.navigateAndRemoveUntil(AppRoutes.home);
   }
 
   void _handleGoogleSignUp() {
@@ -25,7 +26,7 @@ class _CreateAccountPageState extends State<CreateAccountPage> {
   }
 
   void _handleLoginNavigation() {
-    Navigator.pop(context);
+    NavigationService.goBack();
   }
 
   @override
